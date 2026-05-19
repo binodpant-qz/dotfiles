@@ -1,2 +1,3 @@
+alias run-zuora-e2e='alias zuora-e2e='find tests/subscriptions/Zuora/e2e -name "*Test.php" | sort | while read -r f; do phpctl test "$f" --group=E2E --no-watch || exit 1; done'
 alias gpsup='git push --set-upstream origin $(git_current_branch)'
 alias signadot-setup='gcloud auth login; gcloud container clusters get-credentials staging --region us-central1 --project qzlt-stage-webapp; signadot --config .signadot/config.yaml local connect; signadot --config .signadot/config.yaml sandbox apply -f .signadot/gitpod-sandbox.yml --wait-timeout=5m --set cluster=staging --set workspace-id=${GITPOD_WORKSPACE_ID#quizlet-}'
